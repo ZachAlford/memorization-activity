@@ -1,0 +1,32 @@
+// Place all the styles related to the Reviews controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// for magic.js and wordBlocks.js
+#swappedWordsList li {
+    margin: .2em 0 .2em 0;
+    font-size: 1.2em;
+    display: inline-block;}
+
+.selectedWord {
+    border-style: solid;
+    border-color: yellow;
+}
+
+// for dragAndDrop.js
+#row0 {
+    border: 1px solid #eee;
+    min-height: 20px;
+    list-style-type: none;
+    margin: 10px;
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
+	width: 100%;
+  }
+  #row0 li, #row2 li {
+	padding: 1em 1em 1em 1em;
+    margin: 0 1em 0 1em;
+    width: 120px;
+    font-size: 1.05em;
+	display: inline;
+  }
