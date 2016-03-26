@@ -3,9 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // for magic.js and wordBlocks.js
+
+pre {
+  display: inline;
+  visibility: hidden;
+}
 #swappedWordsList li {
-    margin: .2em 0 .2em 0;
-    font-size: 1.2em;
+    margin: .2em 1em .2em 1em;
+    font-size: 1.9em;
     display: inline-block;}
 
 .selectedWord {

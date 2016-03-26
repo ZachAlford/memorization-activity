@@ -1,6 +1,5 @@
 .container
-    %h1 Review of
-    %h4= @review.rtype
+    %h1 Review of Genesis 1:1
     .well#reviewWell
         / this line below is temporary, for the sake of fill_in_the_blank.js:
         %p{id: 'test'}
@@ -10,7 +9,7 @@
     = link_to 'Back', root_path, class: 'btn btn-primary', id: 'backButton'
 
 :javascript
-    var body = 'and walk in the way of love, just as Christ loved us and gave himself up for us as a fragrant offering and sacrifice to God.' // for future reference, need to re-implement initializeSwappedWordsList(), it only works with 5 or more words
+    var body = 'In the beginning God created the heavens and the earth.' // for future reference, need to re-implement initializeSwappedWordsList(), it only works with 5 or more words
 
 
 /= javascript_include_tag 'specific_reviews/wordBlocks'

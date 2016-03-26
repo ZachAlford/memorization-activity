@@ -34,7 +34,7 @@ function initializeReviewHTML(data) {
     $('#reviewWell').append('<ul id="swappedWordsList"></ul>');
     for (var index = 0; index < data.swappedWordsList().length; index++) {
         isPositionOfWordCorrect(data, index) ? labelType = "success" : labelType = "default";
-        $('#swappedWordsList').append( '<li><span class="label label-' + labelType + '">' + data.swappedWordsList()[index] + '</span></li>' + wordSpacing );
+        $('#swappedWordsList').append( '<li><span class="label label-' + labelType + '">' + data.swappedWordsList()[index] + '</span></li>' + wordSpacing);
     }
 
     /*
@@ -291,9 +291,10 @@ function endReview(data) {
 //         console.log('data.timing: ' + data.timing);
         $('#result_correctness').val(calculateAndDisplayResults(data));
     } else {
+        calculateAndDisplayResults(data)
         $('#result_correctness').val(0);
     }
-    $('form').submit();
+//     $('form').submit();
 }
 
 function beginReview(data) {
@@ -318,13 +319,17 @@ function beginReview(data) {
 }
 
 function calculateAndDisplayResults(data){
-    var grade = ['A: great job!', 'B: not bad!', 'C: not horrible', 'D: not failing'];
+    var grade = ['A, great job!', 'B, not bad!', 'C, not horrible', 'D, not failing'];
     var decimalGrade = [1, .85, .75, .65, 0];
-    for(var index=0; index<4; index++) {
-        if (data.timing < ((index+1) * data.swappedWordsList().length)) {
-                $( "<p id='grade'>Your grade: " + grade[index] + "</p>" ).insertAfter( "#timer" );
-                break;
-            }
+    if (allWordsAreInCorrectPosition(data)) {
+      for(var index=0; index<4; index++) {
+          if (data.timing < ((index+1) * data.swappedWordsList().length)) {
+                  $( "<p id='grade'>Your grade: " + grade[index] + "</p>" ).insertAfter( "#timer" );
+                  break;
+              }
+      }
+    } else {
+      $( "<p id='grade'>Your grade: F, failed, try again </p>" ).insertAfter( "#timer" );
     }
     return decimalGrade[index]
 }
