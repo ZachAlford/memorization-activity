@@ -7,6 +7,10 @@
         = hidden_field_tag :review_id, :value => @review.id
         = submit_tag 'Check', class: 'btn btn-primary', id: 'checkButton'
     = link_to 'Back', root_path, class: 'btn btn-primary', id: 'backButton'
+    %br
+    %p Instructions:
+    %p Press 'Begin' to begin the activity. You'll see the bible verse's words in random order. Your job is to put them back in order. If a word is highlighted green, it is in its correct position in the verse, and you cannot move it from this position. Before the activity finishes, there is at most one word highlighted blue; all words highlighted blue or grey are not in their correct position in the verse. If a word is highlighted blue, then, if you click on a word with a grey highlight, these two words will swap positions in the verse. If a word is swapped to its correct position in the verse, then the word changes to a green highlight. If the swap places neither word in its correct position, then you get a strike; three strikes, and you fail the activity.
+    %p If you click on a word that is highlighted blue, then the word changes to a grey highlight. When no word is highlighted blue, then clicking on any word that is highlighted grey will change the word to a blue highlight.
 
 :javascript
     var body = 'In the beginning God created the heavens and the earth.' // for future reference, need to re-implement initializeSwappedWordsList(), it only works with 5 or more words
